@@ -37,7 +37,7 @@ $pass = $_POST['password'];
 $validation = checkPassword($pass);
 
 
-if (empty($validation)) {
+if (count($validation) <= 0) {
     $data['strong_password'] = true;
 }
 echo json_encode($data);

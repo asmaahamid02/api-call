@@ -18,4 +18,5 @@ function get_christmas_date()
     return $christmas;
 }
 
+
 echo json_encode(['days_left' => get_diff(date('Y-m-d'), get_christmas_date())->days]);
