@@ -1,5 +1,4 @@
 <?php
-
 function empty_inputs($inputs)
 {
     $data['errors'] = array();
