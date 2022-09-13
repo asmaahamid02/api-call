@@ -1,26 +1,30 @@
 <?php
-$pass = $_POST['password'];
 
 function checkPassword($password)
 {
     $errors = array();
 
+    //check password length
     if (strlen($password) < 12) {
         $errors['length'] = 'Your password should be at least 12 characters';
     }
 
+    //check if password contains uppercase
     if (!preg_match('@[A-Z]@', $password)) {
         $errors['uppercase'] = 'Your password should contains at least one upper case';
     }
 
+    //check if password contains lowercase
     if (!preg_match('@[a-z]@', $password)) {
         $errors['lowercase'] = 'Your password should contains at least one lower case';
     }
 
+    //check if password contains number
     if (!preg_match('@[0-9]@', $password)) {
         $errors['number'] = 'Your password should contains at least one number';
     }
 
+    //check if password contains special character
     if (!preg_match('@[^\w]@', $password)) {
         $errors['special character'] = 'Your password should contains at least one special character';
     }
@@ -28,9 +32,11 @@ function checkPassword($password)
     return $errors;
 }
 
+$data['strong_password'] = false;
+$pass = $_POST['password'];
 $validation = checkPassword($pass);
 
-$data['strong_password'] = false;
+
 if (empty($validation)) {
     $data['strong_password'] = true;
 }
