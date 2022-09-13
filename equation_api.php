@@ -6,9 +6,9 @@ function calculate($num1, $num2, $num3)
     return pow($num1, 3) + $num2 * $num3 + $num1 / $num2;
 }
 
-$a = $_GET['a'];
-$b = $_GET['b'];
-$c = $_GET['c'];
+$a = $_POST['a'];
+$b = $_POST['b'];
+$c = $_POST['c'];
 
 $errors = empty_inputs([$a, $b, $c]);
 if ($b == 0) {
