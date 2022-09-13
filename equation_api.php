@@ -1,15 +1,18 @@
 <?php
-$a = $_GET['a'];
-$b = $_GET['b'];
-$c = $_GET['c'];
+$a = $_POST['a'];
+$b = $_POST['b'];
+$c = $_POST['c'];
 
-$data['expression'] = 'a^3 + b*c - a/b';
+$data = array();
 
-$result = pow($a,3) + $b*$c + $a/$b;
+if (empty($a) || empty($b) || empty($c)) {
+    $data['error'] = 'No full data entered';
+} else {
+    $result = pow($a, 3) + $b * $c + $a / $b;
+    $data = [
+        'expression' => 'a^3 + b*c - a/b',
+        'result' => $result
+    ];
+}
 
-$data = [
-'expression' => 'a^3 + b*c - a/b',
-'result' => $result];
-
-echo json_encode($data)
-?>
+echo json_encode($data);
