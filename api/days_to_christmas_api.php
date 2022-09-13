@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: http://127.0.0.1:5500');
 function get_diff($date1, $date2)
 {
     $date1 = new DateTime($date1);

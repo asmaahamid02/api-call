@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Document</title>
 </head>
 
@@ -16,10 +17,22 @@
                     <input class="input" name="password" id="password" type="password" placeholder="a">
                     <label for="password">Password</label>
                 </div>
-                <button type="button" name="submit" class="btn btn-outlined">Check Strength</button>
+                <button type="submit" name="submit-pass" class="btn btn-outlined">Check Strength</button>
+            </form>
+        </div>
+        <div class="form-1">
+            <form action="" id="form-2">
+                <div class="inputsContaner">
+                    <input class="input" name="string" id="string" type="text" placeholder="a">
+                    <label for="string">Type String</label>
+                </div>
+                <button type="submit" name="submit-pal" class="btn btn-outlined">Check Palindrome</button>
             </form>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="./assets/javascript/script.js"></script>
 </body>
 
 </html>
